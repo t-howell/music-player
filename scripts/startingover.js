@@ -2,7 +2,7 @@
 //Music found here: https://freemusicarchive.org/music/charts/this-week
 
 //songs array
-let songs = ["contents/sounds/lightblow-theEmergenceOfLove.mp3", "contents/sounds/tours-enthusiast.mp3"];
+let songs = ["contents/sounds/tours-enthusiast.mp3", "contents/sounds/lightblow-theEmergenceOfLove.mp3"];
 
 //Covers array
 let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "contents/images/aster-flower.jpeg"];
@@ -12,7 +12,7 @@ let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "cont
 //Select song name h1 from index
 let songName = document.getElementById('songName');
 //song title array
-let songTitle = ["Lightblow - The Emergence of Love", "Tours - Enthusiast"];
+let songTitle = ["Tours - Enthusiast", "Lightblow - The Emergence of Love"];
 //get seekbar from index
 let fill = document.getElementById("fill");
 

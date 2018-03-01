@@ -14,7 +14,8 @@ main {
     /*border: 3px solid black;*/
     width: 300px;
     height: 500px;
-    margin: 5rem auto;
+    margin: 0 auto;
+    margin-top: 7rem;
     padding: 1.5rem;
     background: #5F4B8B;
     box-shadow: 10px 10px 50px 10px rgb(54, 37, 92);
@@ -57,6 +58,9 @@ div#fill {
     justify-content: center;
     margin: 0 auto;
     padding: 1rem;
+}
+#play>img {
+    height: 70px;
 }
 button {
     background: none;
