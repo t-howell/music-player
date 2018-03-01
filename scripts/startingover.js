@@ -30,10 +30,10 @@ function playSong() {
 function playPause() {
     if(song.paused){
         song.play();
-        $("#play img").attr("src", "Paused.png");
+        $("#play img").attr("src", "contents/images/pause.svg");
     } else {
         song.pause();
-        $("#play img").attr("src", "Play.png")
+        $("#play img").attr("src", "contents/images/play.svg");
     }
 }
 //seeker function
@@ -50,7 +50,7 @@ function next() {
         currentSong = 0;
     }
     playSong();
-    $("#paly img").attr("src","Pause.png");
+    $("#play img").attr("src","contents/images/pause.svg");
     $("#image img").attr("src", coverArt[currentSong]);
     //background
     //$("#bg img").attr("src", coverArt[currentSong]);
@@ -64,7 +64,7 @@ function prev() {
         currentSong = 2;
     }
     playSong();
-    $("#paly img").attr('src',"Pause.png");
+    $("#play img").attr('src',"contents/images/pause.svg");
     $("#image img").attr("src", coverArt[currentSong]);
     //background
     //$("#bg img").attr("src", coverArt[currentSong]);
