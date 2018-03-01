@@ -5,12 +5,14 @@
 let songs = ["contents/sounds/lightblow-theEmergenceOfLove.mp3", "contents/sounds/tours-enthusiast.mp3"];
 
 //Covers array
-let coverArt = ["http://via.placeholder.com/250x250", "http://via.placeholder.com/250x250"];
+let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "contents/images/aster-flower.jpeg"];
+//select cover image from index
 
+//let cover = document.getElementById('coverImage').src;
 //Select song name h1 from index
 let songName = document.getElementById('songName');
 //song title array
-let songTitle = ["LightBlow - The Emergence of Love", "Tours - Enthusiast"];
+let songTitle = ["Lightblow - The Emergence of Love", "Tours - Enthusiast"];
 //get seekbar from index
 let fill = document.getElementById("fill");
 
@@ -51,7 +53,7 @@ function next() {
     }
     playSong();
     $("#play img").attr("src","contents/images/pause.svg");
-    $("#image img").attr("src", coverArt[currentSong]);
+    $("#coverImage").attr("src", coverArt[currentSong]);
     //background
     //$("#bg img").attr("src", coverArt[currentSong]);
 }
@@ -65,7 +67,7 @@ function prev() {
     }
     playSong();
     $("#play img").attr('src',"contents/images/pause.svg");
-    $("#image img").attr("src", coverArt[currentSong]);
+    $("#coverImage").attr("src", coverArt[currentSong]);
     //background
     //$("#bg img").attr("src", coverArt[currentSong]);
 }

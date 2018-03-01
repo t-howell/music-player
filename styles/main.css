@@ -2,21 +2,46 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0 auto;
+    height: 100vh;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d7a7ff+0,5f03ff+100 */
+    background: #d7a7ff; /* Old browsers */
+    background-size: cover;
+    background: linear-gradient(to bottom, #d7a7ff 0%,#5f03ff 100%) no-repeat; 
+
 }
 
 main {
-    border: 3px solid black;
+    /*border: 3px solid black;*/
     width: 300px;
-    height: 450px;
+    height: 500px;
     margin: 5rem auto;
+    padding: 1.5rem;
+    background: #5F4B8B;
+    box-shadow: 10px 10px 50px 10px rgb(54, 37, 92);
+    display: grid;
+   /* justify-items: center;
+    justify-content: center;*/
+    align-items: center;
+    align-content: center;
+    border-radius: 25px;
+}
+section#top {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+}
+h1 {
+    font-size: 120%;
+    color: #eee;
+    text-shadow: 2px 2px 2px rgb(62, 43, 102);
 }
 
-#song-image {
+#coverImage {
     width: 250px;
     height: 250px;
     margin: 1rem;
     margin-bottom: 2rem;
+    border-radius: 10px;
 }
 
 section#seekBar {
@@ -26,4 +51,19 @@ section#seekBar {
 div#fill {
     height: 10px;
     background-color: blueviolet;
+}
+#controls {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 1rem;
+}
+button {
+    background: none;
+    border: none;
+    color: #eee;
+}
+#controls>button:nth-of-type(2),
+#controls>button:nth-of-type(3) {
+    margin-left: 1rem;
 }

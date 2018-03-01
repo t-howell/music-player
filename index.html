@@ -11,20 +11,22 @@
 </head>
 <body>
     <main>
-        <!-- Defining audio files -->
-        <h1 id="songName">SongName</h1>
-        <section id="cover">
-            <img src="http://via.placeholder.com/250x250" alt="song image" id="coverImage" width="250">
-        </section>
+        <section id="top">
+            <!-- Defining audio files -->
+            <h1 id="songName">SongName</h1>
+            
+            <img src="contents/images/boat.jpg" alt="song image" id="coverImage" width="250">
+        </section><!-- #top -->
         <section id="seekBar">
             <div id="fill"></div>
             <span id="slider"></span>
-        </section>
+        </section><!-- #seekBar -->
+        
         <!-- <span id="progressbar"></span> -->
         <section id="controls">
-            <button id="prev" onclick="prev()"><i class="fas fa-angle-double-left"></i></button>
-            <button id="play" onclick="playPause()"><img src="contents/images/pause.svg" alt="play/pause" width="20px"></button>
-            <button id="next" onclick="next()"><i class="fas fa-angle-double-right"></i></button>
+            <button id="prev" onclick="prev()"><i class="fas fa-angle-double-left fa-3x"></i></button>
+            <button id="play" onclick="playPause()"><img src="contents/images/pause.svg" alt="play/pause" width="40px" ></button>
+            <button id="next" onclick="next()"><i class="fas fa-angle-double-right fa-3x"></i></button>
         </section>
         <!--<ul id="songList">
             <li><a href="#" data-value="contents/sounds/lightblow-theEmergenceOfLove.mp3"><img src="http://via.placeholder.com/50x50" alt="album1"></a></li>
