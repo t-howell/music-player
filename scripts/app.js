@@ -1,42 +1,73 @@
+// Functionality from this tutorial: https://www.youtube.com/watch?v=Dm72PS7GZDs
+//Music found here: https://freemusicarchive.org/music/charts/this-week
 
+//songs array
+let songs = ["contents/sounds/tours-enthusiast.mp3", "contents/sounds/lightblow-theEmergenceOfLove.mp3", "contents/sounds/rain-10min.mp3"];
 
-let playButton = document.getElementById('play');
-let coverImg = document.getElementById('cover');
+//Covers array
+let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "contents/images/aster-flower.jpeg"];
+//select cover image from index
 
-//get audio files from DOM and remove autoplay
-let enthusiast = document.getElementById('enthusiast');
-enthusiast.autoplay = false;
+//let cover = document.getElementById('coverImage').src;
+//Select song name h1 from index
+let songName = document.getElementById('songName');
+//song title array
+let songTitle = ["Tours - Enthusiast", "Lightblow - The Emergence of Love", "Rain - White Noise"];
+//get seekbar from index
+let fill = document.getElementById("fill");
 
-let teol = document.getElementById('TEOL');
-teol.autoplay = false;
+let song = new Audio();
+let currentSong = 0;
 
-function Song(song, title, cover, artist) {
-    this.song = song;
-    this.title = title;
-    this.cover = [cover];
-    this.artist = artist;
-    this.returnSong = returnSong;
-    this.playSong = playSong;
-};
+//autoplay
+window.onload = playSong;
 
-// Defining song objects
-let song1 = new Song(new Audio(enthusiast), 'Enthusiast', 'http://via.placeholder.com/250x250', 'Tours');
-
-let song2 = new Song(new Audio(teol), 'The Emergence of Love', 'http://via.placeholder.com/250x250', 'Lightblow');
-
-//Store song objects in an array
-//let songs = [song1, song2];
-
-//Create a current song variable and set it to the first song
-//let currentSong = song1;
-
-function returnSong(Song) {
-    this.song.currentTime = 0;
-    //this.song.play();
-    coverImg.src = this.cover; 
-};
-function playSong(songs) {
-    this.song.play();
+//load and paly current song/change song title
+function playSong() {
+    song.src = songs[currentSong];
+    songName.textContent = songTitle[currentSong];
+    song.play();
 }
-returnSong();
-playButton.addEventListener('click', playSong);
+//play button
+function playPause() {
+    if(song.paused){
+        song.play();
+        $("#play img").attr("src", "contents/images/pause.svg");
+    } else {
+        song.pause();
+        $("#play img").attr("src", "contents/images/play.svg");
+    }
+}
+//seeker function
+song.addEventListener('timeupdate', function(){
+    let position = song.currentTime / song.duration;
+
+    fill.style.width = position * 100 + '%';
+});
+
+//next button
+function next() {
+    currentSong++;
+    if(currentSong > 2){
+        currentSong = 0;
+    }
+    playSong();
+    $("#play img").attr("src","contents/images/pause.svg");
+    $("#coverImage").attr("src", coverArt[currentSong]);
+    //background
+    //$("#bg img").attr("src", coverArt[currentSong]);
+}
+
+
+//prev button
+function prev() {
+    currentSong--;
+    if(currentSong < 0){
+        currentSong = 2;
+    }
+    playSong();
+    $("#play img").attr('src',"contents/images/pause.svg");
+    $("#coverImage").attr("src", coverArt[currentSong]);
+    //background
+    //$("#bg img").attr("src", coverArt[currentSong]);
+}
