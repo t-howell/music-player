@@ -1,18 +1,17 @@
 // Functionality from this tutorial: https://www.youtube.com/watch?v=Dm72PS7GZDs
 //Music found here: https://freemusicarchive.org/music/charts/this-week
+//White noise found here: http://mc2method.org/white-noise/
 
 //songs array
-let songs = ["contents/sounds/tours-enthusiast.mp3", "contents/sounds/lightblow-theEmergenceOfLove.mp3", "contents/sounds/rain-10min.mp3"];
+let songs = ["contents/sounds/white-Noise-60min.mp3", "contents/sounds/ocean-60min.mp3", "contents/sounds/rain-10min.mp3"];
 
 //Covers array
 let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "contents/images/aster-flower.jpeg"];
-//select cover image from index
 
-//let cover = document.getElementById('coverImage').src;
 //Select song name h1 from index
 let songName = document.getElementById('songName');
 //song title array
-let songTitle = ["Tours - Enthusiast", "Lightblow - The Emergence of Love", "Rain - White Noise"];
+let songTitle = ["White Noise", "Ocean Sounds", "Rain"];
 //get seekbar from index
 let fill = document.getElementById("fill");
 
