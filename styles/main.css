@@ -90,6 +90,9 @@ div#fill {
 #play>img {
     height: 40px;
 }
+button#play {
+    outline: none;
+}
 button {
     background: none;
     border: none;
