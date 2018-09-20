@@ -9,14 +9,14 @@ let songsObj =
     "track": "contents/sounds/white-Noise-60min.mp3"
     }, 
     {
-    "title": "White Noise",
+    "title": "Ocean Sounds",
     "coverArt": "contents/images/boat.jpg",
-    "track": "contents/sounds/white-Noise-60min.mp3"
+    "track": "contents/sounds/ocean-60min.mp3"
     },
     {
-    "title": "White Noise",
+    "title": "Rain",
     "coverArt": "contents/images/boat.jpg",
-    "track": "contents/sounds/white-Noise-60min.mp3"
+    "track": "contents/sounds/rain-60min.mp3"
     }];
 
 
