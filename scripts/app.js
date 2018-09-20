@@ -5,17 +5,17 @@
 let songsObj = 
     [{
     "title": "White Noise",
-    "coverArt": "contents/images/boat.jpg",
+    "coverArt": "contents/images/paint.jpeg",
     "track": "contents/sounds/white-Noise-60min.mp3"
     }, 
     {
     "title": "Ocean Sounds",
-    "coverArt": "contents/images/boat.jpg",
+    "coverArt": "contents/images/beach.jpeg",
     "track": "contents/sounds/ocean-60min.mp3"
     },
     {
     "title": "Rain",
-    "coverArt": "contents/images/boat.jpg",
+    "coverArt": "contents/images/rain.jpg",
     "track": "contents/sounds/rain-60min.mp3"
     }];
 
