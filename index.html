@@ -27,15 +27,11 @@
             <button id="prev" onclick="prev()"><i class="fas fa-angle-double-left fa-3x"></i></button>
             <button id="play" onclick="playPause()"><img src="contents/images/play.svg" alt="play/pause" width="40" ></button>
             <button id="next" onclick="next()"><i class="fas fa-angle-double-right fa-3x"></i></button>
+            
         </div>
-        <!--<ul id="songList">
-            <li><a href="#" data-value="contents/sounds/lightblow-theEmergenceOfLove.mp3"><img src="http://via.placeholder.com/50x50" alt="album1"></a></li>
-            <li><a href="#" data-value="contents/sounds/tours-enthusiast.mp3"><img src="http://via.placeholder.com/50x50" alt="album1"></a></li>
-            <li><a href="#" data-value=""><img src="http://via.placeholder.com/50x50" alt="album1"></a></li>
-        </ul> 
-        <audio controls type="audio/mpeg" preload="true">
-            <source src="" id="source">
-        </audio> -->
+        <div class="volumeContainer">
+            <span class="volume"><i class="fas fa-volume-off"></i></span><input type="range" min="1" max="100" value="50" class="slider" id="myRange"><span class="volume"><i class="fas fa-volume-up"></i></span>
+        </div>
     </main>
 <footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

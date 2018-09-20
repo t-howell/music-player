@@ -6,17 +6,17 @@ let songsObj =
     [{
     "title": "White Noise",
     "coverArt": "contents/images/paint.jpeg",
-    "track": "contents/sounds/white-Noise-60min.mp3"
+    "track": "contents/sounds/min-white-Noise-60min.mp3"
     }, 
     {
     "title": "Ocean Sounds",
     "coverArt": "contents/images/beach.jpeg",
-    "track": "contents/sounds/ocean-60min.mp3"
+    "track": "contents/sounds/min-ocean-60min.mp3"
     },
     {
     "title": "Rain",
     "coverArt": "contents/images/rain.jpg",
-    "track": "contents/sounds/rain-60min.mp3"
+    "track": "contents/sounds/min-rain-60min.mp3"
     }];
 
 
