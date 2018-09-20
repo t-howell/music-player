@@ -2,30 +2,52 @@
 //Music found here: https://freemusicarchive.org/music/charts/this-week
 //White noise found here: http://mc2method.org/white-noise/
 
+let songsObj = 
+    [{
+    "title": "White Noise",
+    "coverArt": "contents/images/boat.jpg",
+    "track": "contents/sounds/white-Noise-60min.mp3"
+    }, 
+    {
+    "title": "White Noise",
+    "coverArt": "contents/images/boat.jpg",
+    "track": "contents/sounds/white-Noise-60min.mp3"
+    },
+    {
+    "title": "White Noise",
+    "coverArt": "contents/images/boat.jpg",
+    "track": "contents/sounds/white-Noise-60min.mp3"
+    }];
+
+
 //songs array
-let songs = ["contents/sounds/white-Noise-60min.mp3", "contents/sounds/ocean-60min.mp3", "contents/sounds/rain-10min.mp3"];
+// let songs = ["contents/sounds/white-Noise-60min.mp3", "contents/sounds/ocean-60min.mp3", "contents/sounds/rain-10min.mp3"];
 
 //Covers array
-let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "contents/images/aster-flower.jpeg"];
+// let coverArt = ["contents/images/boat.jpg", "contents/images/lupins.jpeg", "contents/images/aster-flower.jpeg"];
 
-//Select song name h1 from index
-let songName = document.getElementById('songName');
 //song title array
-let songTitle = ["White Noise", "Ocean Sounds", "Rain"];
+// let songTitle = ["White Noise", "Ocean Sounds", "Rain"];
+
+//Select song name from index
+let songName = document.getElementById('songName');
+
 //get seekbar from index
 let fill = document.getElementById("fill");
 
 let song = new Audio();
+
 let currentSong = 0;
 
 //autoplay
 window.onload = playSong;
 
-//load and paly current song/change song title
+//load and play current song/change song title
 function playSong() {
-    song.src = songs[currentSong];
-    songName.textContent = songTitle[currentSong];
-    song.play();
+    song.currentTime = 0;
+    song.src = songsObj[currentSong].track;
+    songName.textContent = songsObj[currentSong].title;
+    // song.play();
 }
 //play button
 function playPause() {
@@ -51,8 +73,8 @@ function next() {
         currentSong = 0;
     }
     playSong();
-    $("#play img").attr("src","contents/images/pause.svg");
-    $("#coverImage").attr("src", coverArt[currentSong]);
+    $("#play img").attr("src","contents/images/play.svg");
+    $("#coverImage").attr("src", songsObj[currentSong].coverArt);
     //background
     //$("#bg img").attr("src", coverArt[currentSong]);
 }
@@ -66,7 +88,7 @@ function prev() {
     }
     playSong();
     $("#play img").attr('src',"contents/images/pause.svg");
-    $("#coverImage").attr("src", coverArt[currentSong]);
+    $("#coverImage").attr("src", songsObj[currentSong].coverArt);
     //background
     //$("#bg img").attr("src", coverArt[currentSong]);
 }

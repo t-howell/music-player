@@ -6,30 +6,53 @@ body {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d7a7ff+0,5f03ff+100 */
     background: #d7a7ff; /* Old browsers */
     background-size: cover;
-    background: linear-gradient(to bottom, #d7a7ff 0%,#5f03ff 100%) no-repeat; 
+    background: linear-gradient(to bottom, #6d6d6d 0%,#000000 100%) no-repeat;
+    /* background: linear-gradient(to bottom, #d7a7ff 0%,#5f03ff 100%) no-repeat;  */
 
 }
 
 main {
-    /*border: 3px solid black;*/
+    position: relative;
+    overflow: hidden;
+    border: 3px solid black;
     width: 300px;
     height: 500px;
     margin: 0 auto;
     margin-top: 7rem;
     padding: 1.5rem;
-    background: #5F4B8B;
-    box-shadow: 10px 10px 50px 10px rgb(54, 37, 92);
+    background: #000;
+    
+    box-shadow: 30px 30px 15px rgba(0, 0, 0, 0.24), inset 0 0 1px rgb(226, 226, 226);
+    /* background: #5F4B8B; */
+    /* box-shadow: 10px 10px 50px 10px rgb(54, 37, 92); */
     display: grid;
    /* justify-items: center;
     justify-content: center;*/
     align-items: center;
     align-content: center;
-    border-radius: 25px;
+    /* border-radius: 25px; */
+    
+}
+main:before {
+    /* FCode from: http://jsfiddle.net/b5TnZ/ */
+    content: '';
+    position: absolute;
+    left: 9%;
+    width: 100%; 
+    height: 200%; 
+    background-color: none; /* fallback */
+    background-color: rgba(255, 255, 255, 0.08);
+    top: 0;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    transform: rotate(32deg);
+    
 }
 section#top {
     display: grid;
     justify-items: center;
     justify-content: center;
+
 }
 h1 {
     font-size: 120%;
@@ -42,7 +65,8 @@ h1 {
     height: 250px;
     margin: 1rem;
     margin-bottom: 2rem;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    box-shadow: inset 10px 10px 50px #555;
 }
 
 div#seekBar {
@@ -60,7 +84,7 @@ div#fill {
     padding: 1rem;
 }
 #play>img {
-    height: 70px;
+    height: 40px;
 }
 button {
     background: none;
