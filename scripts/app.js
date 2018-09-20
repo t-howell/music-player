@@ -42,6 +42,18 @@ let currentSong = 0;
 //autoplay
 window.onload = playSong;
 
+//playPause on keypress: spacebar
+
+document.addEventListener('keypress', spacebar);
+
+function spacebar(e) {
+    // console.log(e.keyCode);
+    if (e.keyCode = 32) {
+        e.preventDefault();
+        playPause();
+    }
+}
+
 //load and play current song/change song title
 function playSong() {
     song.currentTime = 0;
