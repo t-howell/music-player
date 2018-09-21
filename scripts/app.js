@@ -94,32 +94,15 @@ function prev() {
     //$("#bg img").attr("src", coverArt[currentSong]);
 }
 
-//control volume
+//Volume slider
 let volumeSlider = document.getElementById('volumeRange');
 volumeSlider.oninput = function() {
     // console.log(volumeSlider.value);
     // console.log(song.volume);
+    song.volume = ('0.' + volumeSlider.value);
     if (volumeSlider.value <= 0) {
-        song.volume = 0.0;
-    } else if (volumeSlider.value > 0 && volumeSlider.value <= 10) {
-        song.volume = 0.1;
-    } else if (volumeSlider.value > 10 && volumeSlider.value <= 20) {
-        song.volume = 0.2;
-    } else if (volumeSlider.value > 20 && volumeSlider.value <= 30) {
-        song.volume = 0.3;
-    } else if (volumeSlider.value > 30 && volumeSlider.value <= 40) {
-        song.volume = 0.4;
-    } else if (volumeSlider.value > 40 && volumeSlider.value <= 50) {
-        song.volume = 0.5;
-    } else if (volumeSlider.value > 50 && volumeSlider.value <= 60) {
-        song.volume = 0.6;
-    } else if (volumeSlider.value > 60 && volumeSlider.value <= 70) {
-        song.volume = 0.7;
-    } else if (volumeSlider.value > 70 && volumeSlider.value <= 80) {
-        song.volume = 0.8;
-    } else if (volumeSlider.value > 80 && volumeSlider.value <= 90) {
-        song.volume = 0.9;
-    } else if (volumeSlider.value > 90 && volumeSlider.value <= 100) {
-        song.volume = 1.0;
+        volumeDown.innerHTML = ('<i class="fas fa-volume-off"></i>');
+    } else {
+        volumeDown.innerHTML = ('<i class="fas fa-volume-down"></i>');
     }
 };
