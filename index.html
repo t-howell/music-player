@@ -17,6 +17,7 @@
             
             <img src="contents/images/paint.jpeg" alt="song image" id="coverImage" width="250">
         </section><!-- #top -->
+
         <div id="seekBar">
             <div id="fill"></div>
             <span id="slider"></span>
@@ -26,11 +27,25 @@
         <div id="controls">
             <button id="prev" onclick="prev()"><i class="fas fa-angle-double-left fa-3x"></i></button>
             <button id="play" onclick="playPause()"><img src="contents/images/play.svg" alt="play/pause" width="40" ></button>
-            <button id="next" onclick="next()"><i class="fas fa-angle-double-right fa-3x"></i></button>
-            
-        </div>
+            <button id="next" onclick="next()"><i class="fas fa-angle-double-right fa-3x"></i></button>    
+        </div><!-- #controls-->
+
         <div class="volumeContainer">
             <span class="volume" id="volumeDown"><i class="fas fa-volume-down"></i></span><input type="range" min="0" max="99" value="50" class="slider" id="volumeRange"><span class="volume"><i class="fas fa-volume-up"></i></span>
+        </div><!-- .volumeContainer-->
+
+        <div id="bottomPanel">
+            <div>
+            <button class="bottomControls" id="random">
+                <i class="fas fa-random"></i>
+            </button>
+            <button class="bottomControls" id="repeat">
+                <i class="fas fa-redo-alt"></i>
+            </button>
+            <button class="bottomControls" id="like">
+                <i class="far fa-heart"></i>
+            </button>
+            </div>
         </div>
     </main>
 <footer>

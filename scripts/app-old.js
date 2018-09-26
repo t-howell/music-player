@@ -19,16 +19,12 @@ let songsObj =
     "track": "contents/sounds/min-rain-60min.mp3"
     }];
 
-//Select song name
+//Select song name from index
 let songName = document.getElementById('songName');
 
-//get seekbar
+//get seekbar from index
 let fill = document.getElementById("fill");
 
-//get cover image
-let coverImage = document.getElementById("coverImage");
-
-//Set up song variable
 let song = new Audio();
 let currentSong = 0;
 
@@ -36,15 +32,15 @@ let currentSong = 0;
 window.onload = playSong;
 
 //playPause on keypress: spacebar
-document.addEventListener('keydown', spacebar);
+document.addEventListener('keypress', spacebar);
 
 function spacebar(e) {
     // console.log(e.keyCode);
     if (e.keyCode = 32) {
         e.preventDefault();
         playPause();
-    } 
-};
+    }
+}
 
 //load and play current song/change song title
 function playSong() {
@@ -52,11 +48,8 @@ function playSong() {
     song.src = songsObj[currentSong].track;
     songName.textContent = songsObj[currentSong].title;
     song.volume = 0.5;
-    volumeSlider.value = 50;
-    coverImage.src = songsObj[currentSong].coverArt;
     // song.play();
 }
-
 //play button
 function playPause() {
     if(song.paused){
@@ -83,6 +76,8 @@ function next() {
     playSong();
     $("#play img").attr("src","contents/images/play.svg");
     $("#coverImage").attr("src", songsObj[currentSong].coverArt);
+    //background
+    //$("#bg img").attr("src", coverArt[currentSong]);
 }
 
 
@@ -100,53 +95,12 @@ function prev() {
 //Volume slider
 let volumeSlider = document.getElementById('volumeRange');
 volumeSlider.oninput = function() {
-    if (volumeSlider.value >= 10) {
+    // console.log(volumeSlider.value);
+    // console.log(song.volume);
     song.volume = ('0.' + volumeSlider.value);
-    } else {
-        song.volume = ('0.0' + volumeSlider.value);
-    }
-    console.log(volumeSlider.value);
-    console.log(song.volume);
     if (volumeSlider.value <= 0) {
-        volumeDown.innerHTML = ('<i class="fas fa-volume-off"></i>');
+        volumeDown.innerHTML = ("<i class='fas fa-volume-off'></i>");
     } else {
-        volumeDown.innerHTML = ('<i class="fas fa-volume-down"></i>');
+        volumeDown.innerHTML = ("<i class='fas fa-volume-down'></i>");
     }
 };
-
-//Like
-let like = document.getElementById('like');
-like.addEventListener('click', likeFunction, false);
-
-function likeFunction() {
-    console.log('liked');
-    // like.toggleClass("liked");
-}
-
-//Shuffle
-let shuffle = document.getElementById('random');
-shuffle.addEventListener('click', shuffleFunction, false);
-
-function shuffleFunction() {
-    let randomNumber = Math.random();
-    console.log(randomNumber);
-    if (randomNumber <= 0.33) {
-        currentSong = 0;
-        playSong();
-        playPause();
-    } else if (randomNumber > 0.33 && randomNumber <= 0.66) {
-        currentSong = 1;
-        playSong();
-        playPause();
-    } else if (randomNumber > 0.66) {
-        currentSong = 2;
-        playSong();
-        playPause();
-    }
-};
-
-//Debugging
-
-// document.documentElement.addEventListener("click", function(e) {
-//     console.log(e.target);
-//   });
