@@ -6,17 +6,20 @@ let songsObj =
     [{
     "title": "White Noise",
     "coverArt": "contents/images/paint.jpeg",
-    "track": "contents/sounds/min-white-Noise-60min.mp3"
+    "track": "contents/sounds/min-white-Noise-60min.mp3",
+    "liked": false
     }, 
     {
     "title": "Ocean Sounds",
     "coverArt": "contents/images/beach.jpeg",
-    "track": "contents/sounds/min-ocean-60min.mp3"
+    "track": "contents/sounds/min-ocean-60min.mp3",
+    "liked": false
     },
     {
     "title": "Rain",
     "coverArt": "contents/images/rain.jpg",
-    "track": "contents/sounds/min-rain-60min.mp3"
+    "track": "contents/sounds/min-rain-60min.mp3",
+    "liked": false
     }];
 
 //Select song name
@@ -61,6 +64,7 @@ function playSong() {
     if (songsObj[currentSong].loop == true) {
         currentSong == currentSong;
     }
+
 };
 
 //transition between tracks
@@ -97,7 +101,6 @@ function next() {
     $("#coverImage").attr("src", songsObj[currentSong].coverArt);
 }
 
-
 //prev button
 function prev() {
     currentSong--;
@@ -128,19 +131,39 @@ volumeSlider.oninput = function() {
 };
 
 //Like
-let like = document.getElementById('like');
-like.addEventListener('click', likeFunction);
+// let like = document.getElementById('like');
+// like.addEventListener('click', likeFunction);
 
-function likeFunction() {
-    console.log('liked');
-    like.classList.toggle("active-icon");
-}
+// function likeFunction() {
+//     console.log('liked');
+//     like.classList.toggle("active-icon");
+//     // if (like.classList.contains("active-icon")) {
+//     //     songsObj[currentSong].liked = true;
+//     // } else {
+//     //     songsObj[currentSong].liked = false;
+//     // } 
+//     if (songsObj[currentSong].liked = false) {
+//         songsObj[currentSong].liked = true;
+//     } else if (songsObj[currentSong].liked = true) {
+//         songsObj[currentSong].liked = false;
+//     }
+
+// };
+
+// function toggleLike() {
+//     if (songsObj[currentSong].liked = true) {
+//         like.classList.add("active-icon");
+//     } else if (songsObj[currentSong].liked = false) {
+//         like.classList.remove("active-icon");
+//     }
+// ;}
 
 //Shuffle
 let shuffle = document.getElementById('random');
 shuffle.addEventListener('click', shuffleFunction, false);
 
 function shuffleFunction() {
+    // shuffle.classList.toggle("active-icon");
     let randomNumber = Math.random();
     console.log(randomNumber);
     if (randomNumber <= 0.33) {
@@ -160,17 +183,14 @@ repeatIcon.addEventListener('click', repeatFunction);
 
 function repeatFunction() {
     // console.log('clicked')
-    
     repeatIcon.classList.toggle("active-icon");
 
     //Turn loop on or off based on above icon class
     if (repeatIcon.classList.contains("active-icon")) {
         song.loop = true;
-        console.log("true");
     } else {
         song.loop = false;
-    }
-    
+    }  
 };
 
 
