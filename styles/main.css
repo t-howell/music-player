@@ -155,17 +155,22 @@ button.bottomControls {
 
     /* outline: 1px solid white; */
 }
-button.bottomControls:hover {
+button.bottomControls:hover, button.bottomControls.active-icon:hover {
     color: #5F4B8B;
     cursor: pointer;
 }
-button.bottomControls:active {
+button.bottomControls:active, button.bottomControls.active-icon:active {
     color: red;
     position: relative;
     top: -2px;
     left: -2px;
 
 }
+/* Active Icon */
+button.bottomControls.active-icon {
+    color: rgb(65, 51, 97);
+}
+
 
 /* Thanks CSS tricks: https://css-tricks.com/slightly-careful-sub-elements-clickable-things/ */
 /* button > * {

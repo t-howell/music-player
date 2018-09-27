@@ -46,15 +46,27 @@ function spacebar(e) {
     } 
 };
 
-//load and play current song/change song title
+//load and play current song/change song title/cover art
 function playSong() {
     song.currentTime = 0;
+    song.loop = false;
     song.src = songsObj[currentSong].track;
     songName.textContent = songsObj[currentSong].title;
     song.volume = 0.5;
     volumeSlider.value = 50;
     coverImage.src = songsObj[currentSong].coverArt;
-    // song.play();
+    //when song ends, play next song
+    song.addEventListener('ended', songTransition);
+    //loop
+    if (songsObj[currentSong].loop == true) {
+        currentSong == currentSong;
+    }
+};
+
+//transition between tracks
+function songTransition() {
+    next();
+    playPause();
 }
 
 //play button
@@ -105,8 +117,9 @@ volumeSlider.oninput = function() {
     } else {
         song.volume = ('0.0' + volumeSlider.value);
     }
-    console.log(volumeSlider.value);
-    console.log(song.volume);
+    // console.log(volumeSlider.value);
+    // console.log(song.volume);
+    //Switching out volume slider icon when sound is off
     if (volumeSlider.value <= 0) {
         volumeDown.innerHTML = ('<i class="fas fa-volume-off"></i>');
     } else {
@@ -116,11 +129,11 @@ volumeSlider.oninput = function() {
 
 //Like
 let like = document.getElementById('like');
-like.addEventListener('click', likeFunction, false);
+like.addEventListener('click', likeFunction);
 
 function likeFunction() {
     console.log('liked');
-    // like.toggleClass("liked");
+    like.classList.toggle("active-icon");
 }
 
 //Shuffle
@@ -132,18 +145,35 @@ function shuffleFunction() {
     console.log(randomNumber);
     if (randomNumber <= 0.33) {
         currentSong = 0;
-        playSong();
-        playPause();
     } else if (randomNumber > 0.33 && randomNumber <= 0.66) {
         currentSong = 1;
-        playSong();
-        playPause();
     } else if (randomNumber > 0.66) {
         currentSong = 2;
-        playSong();
-        playPause();
     }
+    playSong();
+    playPause();
 };
+
+//Repeat
+let repeatIcon = document.getElementById("repeat");
+repeatIcon.addEventListener('click', repeatFunction);
+
+function repeatFunction() {
+    // console.log('clicked')
+    
+    repeatIcon.classList.toggle("active-icon");
+
+    //Turn loop on or off based on above icon class
+    if (repeatIcon.classList.contains("active-icon")) {
+        song.loop = true;
+        console.log("true");
+    } else {
+        song.loop = false;
+    }
+    
+};
+
+
 
 //Debugging
 
